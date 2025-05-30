@@ -1,0 +1,334 @@
+/* Importação de fonte do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300,400,500,700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef2f6; /* Um azul acinzentado claro para o fundo */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo para melhor visualização em telas maiores */
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais suave e proeminente */
+    max-width: 850px; /* Aumenta a largura máxima para melhor organização */
+    width: 100%;
+    margin-top: 20px; /* Um pouco de margem no topo */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Azul escuro quase preto */
+    margin-bottom: 35px;
+    font-weight: 700; /* Mais negrito */
+    font-size: 2.5em; /* Aumenta o tamanho da fonte */
+    border-bottom: 2px solid #f0f0f0; /* Linha sutil abaixo do título */
+    padding-bottom: 15px;
+}
+
+.card {
+    background-color: #fcfdff; /* Quase branco para os cards */
+    border: 1px solid #e2eaf0; /* Borda mais suave */
+    border-radius: 10px; /* Cantos arredondados para os cards */
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra leve nos cards */
+}
+
+h2 {
+    color: #34495e; /* Azul acinzentado para subtítulos */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; /* Seminegrito */
+    color: #4a6572;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: calc(100% - 22px); /* Ajuste para padding */
+    padding: 12px;
+    border: 1px solid #cdd6e0; /* Borda mais suave */
+    border-radius: 6px; /* Cantos ligeiramente mais arredondados */
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sombra suave ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+    background-color: #eaf1f7; /* Fundo levemente azul para a textarea de sessão */
+}
+
+p {
+    color: #5a7280;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Botões */
+button {
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-right: 10px; /* Espaçamento entre botões */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px; /* Largura mínima para botões */
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+}
+
+button#authenticateBtn {
+    background-color: #28a745; /* Verde para autenticar */
+}
+button#authenticateBtn:hover {
+    background-color: #218838;
+}
+
+button#logoutBtn {
+    background-color: #dc3545; /* Vermelho para deslogar */
+}
+button#logoutBtn:hover {
+    background-color: #c82333;
+}
+
+button#listGroupsBtn { /* Se você decidir reativá-lo, o estilo estará aqui */
+    background-color: #17a2b8;
+}
+button#listGroupsBtn:hover {
+    background-color: #138496;
+}
+
+button#selectAllGroupsBtn,
+button#deselectAllGroupsBtn {
+    background-color: #6c757d; /* Cinza para seleção */
+    min-width: 150px;
+}
+button#selectAllGroupsBtn:hover,
+button#deselectAllGroupsBtn:hover {
+    background-color: #5a6268;
+}
+
+
+/* Mensagens de Status */
+.message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 0; /* Começa invisível */
+    transform: translateY(-10px); /* Começa um pouco acima */
+    animation: fadeInSlideDown 0.5s forwards; /* Animação ao aparecer */
+}
+
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.info {
+    background-color: #e0f2f7; /* Azul claro */
+    color: #2196f3; /* Azul */
+    border: 1px solid #b3e0ed;
+}
+
+.message.success {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #4caf50; /* Verde */
+    border: 1px solid #c8e6c9;
+}
+
+.message.warning {
+    background-color: #fff3e0; /* Amarelo claro */
+    color: #ff9800; /* Laranja */
+    border: 1px solid #ffe0b2;
+}
+
+.message.error {
+    background-color: #ffebee; /* Vermelho claro */
+    color: #f44336; /* Vermelho */
+    border: 1px solid #ffcdd2;
+}
+
+/* Lista de Grupos */
+#group-list {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e2eaf0;
+}
+
+#group-checkboxes {
+    max-height: 400px; /* Aumenta a altura máxima */
+    overflow-y: auto;
+    border: 1px solid #e0eaf0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9fbfd; /* Fundo mais claro para a área de checkboxes */
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+}
+
+.group-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px; /* Mais espaço entre os itens */
+    padding: 8px 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.group-item:hover {
+    background-color: #f0f8ff; /* Fundo azul claro ao passar o mouse */
+}
+
+.group-item input[type="checkbox"] {
+    margin-right: 15px; /* Mais espaço */
+    transform: scale(1.3); /* Aumenta o tamanho do checkbox */
+    accent-color: #007bff; /* Cor do checkbox (Chrome/Edge) */
+}
+
+.group-item label {
+    margin-bottom: 0; /* Remove margem inferior padrão da label */
+    font-weight: 400; /* Peso normal para o texto */
+    color: #333;
+    cursor: pointer; /* Indica que a label é clicável */
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    button {
+        width: 100%; /* Botões ocupam largura total em telas menores */
+        margin-right: 0;
+        margin-bottom: 10px; /* Espaço entre botões */
+    }
+
+    button:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Ajuste para os botões de seleção de grupo */
+    #selectAllGroupsBtn,
+    #deselectAllGroupsBtn {
+        width: calc(50% - 5px); /* Divide em 2 colunas */
+        margin-right: 5px;
+        box-sizing: border-box;
+    }
+    #deselectAllGroupsBtn {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+}
+
+.auth-step {
+    border: 1px dashed #cccccc; /* Borda tracejada para as etapas de login */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #f8f8f8;
+}
+
+.group-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: flex-start;
+}
+
+/* Garante que os botões dentro de .group-actions tenham o tamanho certo */
+.group-actions button {
+    width: auto; /* Desfaz o width: 100% de telas menores */
+    margin-right: 0; /* Desfaz margin-right global */
+    margin-bottom: 0; /* Desfaz margin-bottom global */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .group-actions button {
+        width: calc(50% - 5px); /* Dois botões por linha */
+        margin-bottom: 10px;
+    }
+    .group-actions button:nth-child(even) {
+        margin-left: 10px; /* Adiciona espaço entre os botões na mesma linha */
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Grupos Telegram</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Grupos Telegram</h1>
+
+        <div id="status-message" class="message"></div>
+
+        <section class="card">
+            <h2>Configurações de Acesso Telegram</h2>
+            <div class="form-group">
+                <label for="apiId">API ID:</label>
+                <input type="number" id="apiId" placeholder="Seu API ID (número)" required>
+            </div>
+            <div class="form-group">
+                <label for="apiHash">API Hash:</label>
+                <input type="text" id="apiHash" placeholder="Seu API Hash (string)" required>
+            </div>
+            <p>Obtenha seu API ID e API Hash em <a href="https://my.telegram.org/" target="_blank">my.telegram.org</a>.</p>
+            <button id="saveConfigBtn">Salvar Credenciais</button>
+        </section>
+
+        <section class="card">
+            <h2>Autenticação e Sessão</h2>
+            <p id="auth-status-text">Carregando status da sessão...</p>
+
+            <div id="auth-phone-step" class="auth-step" style="display: none;">
+                <div class="form-group">
+                    <label for="phoneNumber">Seu número de telefone:</label>
+                    <input type="text" id="phoneNumber" placeholder="+55xxxxxxxxxxx" required>
+                </div>
+                <button id="sendPhoneBtn">Enviar Número</button>
+            </div>
+
+            <div id="auth-password-step" class="auth-step" style="display: none;">
+                <div class="form-group">
+                    <label for="password">Sua senha 2FA:</label>
+                    <input type="password" id="password" placeholder="Senha de verificação em duas etapas" required>
+                </div>
+                <button id="sendPasswordBtn">Enviar Senha</button>
+            </div>
+
+            <div id="auth-code-step" class="auth-step" style="display: none;">
+                <div class="form-group">
+                    <label for="phoneCode">Código recebido no Telegram:</label>
+                    <input type="text" id="phoneCode" placeholder="Código de verificação" required>
+                </div>
+                <button id="sendCodeBtn">Enviar Código</button>
+            </div>
+
+            <div id="auth-completed-actions" style="display: none;">
+                <div class="form-group">
+                    <label for="sessionString">Session String (salva automaticamente):</label>
+                    <textarea id="sessionString" rows="3" readonly placeholder="Sua sessão será exibida aqui após o login"></textarea>
+                </div>
+                <button id="logoutBtn" class="danger-button">Deslogar</button>
+            </div>
+        </section>
+
+        <section class="card" id="group-management-section" style="display: none;">
+            <h2>Gerenciamento de Grupos</h2>
+            <button id="listGroupsBtn">Atualizar Lista de Grupos</button>
+            <div id="group-list">
+                <h3>Meus Grupos:</h3>
+                <div id="group-checkboxes">
+                    <p>Carregando grupos...</p>
+                </div>
+                <div class="group-actions">
+                    <button id="selectAllGroupsBtn">Selecionar Todos</button>
+                    <button id="deselectAllGroupsBtn">Desmarcar Todos</button>
+                    <button id="leaveSelectedGroupsBtn" class="danger-button">Sair dos Grupos Selecionados</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/client.js"></script>
+</body>
+</html>
