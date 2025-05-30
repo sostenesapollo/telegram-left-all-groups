@@ -5,7 +5,7 @@
 ### How to run
 
 ```javascript
-git clone
+git clone https://github.com/sostenesapollo/telegram-left-all-groups
 npm install
 npm start
 ```
