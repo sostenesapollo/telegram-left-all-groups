@@ -7,5 +7,6 @@
 ```javascript
 git clone https://github.com/sostenesapollo/telegram-left-all-groups
 npm install
+cd telegram-left-all-groups
 npm start
 ```
